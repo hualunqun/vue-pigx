@@ -44,11 +44,13 @@ router.beforeEach((to, from, next) => {
       next()
     }
   } else {
-    if (meta.isAuth === false) {
       next()
-    } else {
-      next('/login')
-    }
+    // if (meta.isAuth === false) {
+    //   next()
+    // } else {
+    //     console.log(to, from )
+    //   next('/login')
+    // }
   }
 })
 

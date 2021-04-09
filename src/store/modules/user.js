@@ -125,6 +125,8 @@ const user = {
     },
     // 登出
     LogOut({commit}) {
+        resetRouter();
+        return
       return new Promise((resolve, reject) => {
         logout().then(() => {
           resetRouter();
@@ -160,6 +162,9 @@ const user = {
     },
     // 获取系统菜单
     GetMenu({commit}, obj) {
+        console.log(obj)
+        // commit('SET_MENU_ALL')
+        return
       return new Promise(resolve => {
         getMenu(obj.id).then((res) => {
           const data = res.data.data
@@ -175,6 +180,7 @@ const user = {
     },
     //顶部菜单
     GetTopMenu() {
+        return
       return new Promise(resolve => {
         getTopMenu().then((res) => {
           const data = res.data.data || []

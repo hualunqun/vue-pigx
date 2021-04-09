@@ -33,32 +33,32 @@
         <i slot="prefix" class="iconfont icon-mima"></i>
       </el-input>
     </el-form-item>
-    <el-form-item prop="code">
-      <el-row :span="24">
-        <el-col :span="16">
-          <el-input
-            :maxlength="code.len"
-            v-model="loginForm.code"
-            size="small"
-            auto-complete="off"
-            placeholder="请输入验证码"
-            @keyup.enter.native="handleLogin">
-            <i
-              slot="prefix"
-              class="icon-yanzhengma"/>
-          </el-input>
-        </el-col>
-        <el-col :span="8">
-          <div class="login-code">
-            <img
-              :src="code.src"
-              class="login-code-img"
-              @click="refreshCode">
-          </div>
-        </el-col>
-      </el-row>
+    <!--<el-form-item prop="code">-->
+      <!--<el-row :span="24">-->
+        <!--<el-col :span="16">-->
+          <!--<el-input-->
+            <!--:maxlength="code.len"-->
+            <!--v-model="loginForm.code"-->
+            <!--size="small"-->
+            <!--auto-complete="off"-->
+            <!--placeholder="请输入验证码"-->
+            <!--@keyup.enter.native="handleLogin">-->
+            <!--<i-->
+              <!--slot="prefix"-->
+              <!--class="icon-yanzhengma"/>-->
+          <!--</el-input>-->
+        <!--</el-col>-->
+        <!--<el-col :span="8">-->
+          <!--<div class="login-code">-->
+            <!--<img-->
+              <!--:src="code.src"-->
+              <!--class="login-code-img"-->
+              <!--@click="refreshCode">-->
+          <!--</div>-->
+        <!--</el-col>-->
+      <!--</el-row>-->
 
-    </el-form-item>
+    <!--</el-form-item>-->
     <el-form-item>
       <el-button
         type="primary"
@@ -110,7 +110,7 @@ export default {
     }
   },
   created() {
-    this.refreshCode()
+    // this.refreshCode()
   },
   mounted() {
   },
@@ -132,15 +132,16 @@ export default {
         : (this.passwordType = '')
     },
     handleLogin() {
-      this.$refs.loginForm.validate(valid => {
-        if (valid) {
-          this.$store.dispatch('LoginByUsername', this.loginForm).then(() => {
-            this.$router.push({ path: this.tagWel.value })
-          }).catch(() => {
-            this.refreshCode()
-          })
-        }
-      })
+        this.$router.push({ path: this.tagWel.value })
+      // this.$refs.loginForm.validate(valid => {
+      //   if (valid) {
+      //     this.$store.dispatch('LoginByUsername', this.loginForm).then(() => {
+      //       this.$router.push({ path: this.tagWel.value })
+      //     }).catch(() => {
+      //       this.refreshCode()
+      //     })
+      //   }
+      // })
     }
   }
 }

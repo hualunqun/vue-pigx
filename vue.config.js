@@ -2,10 +2,6 @@
  * 配置参考:
  * https://cli.vuejs.org/zh/config/
  */
-//const url = 'http://localhost:8765'
-// const IS_DEV = process.env.VUE_APP_TITLE === 'dev'
-// const IS_TEST = process.env.VUE_APP_TITLE === 'test'
-// let port = IS_TEST? '9217': '9092' // 开发环境端口9092  测试环境端口9217
 const url = 'http://192.168.51.218:9092'
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const productionGzipExtensions = ['js', 'css']

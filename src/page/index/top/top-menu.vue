@@ -31,7 +31,7 @@ export default {
     }
   },
   created() {
-    this.getTopMenu()
+    // this.getTopMenu()
   },
   computed: {
     ...mapGetters(['menu'])
